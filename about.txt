@@ -1,0 +1,52 @@
+/// * * * Project structure:
+    /app
+    - components
+    - containers
+    - config
+    - utils
+    index.js
+    index.html
+    /dist
+    index.html
+    index_bundle.js
+    package.json
+    webpack.config.js
+    .gitignore
+
+/// * * * NPM * * * ///
+
+  Install Part-1
+  * * * React modules npm install
+    npm install --save react react-dom
+
+  Install Part-2
+  * * * Webpack and babel
+    npm i --save-dev html-webpack-plugin webpack webpack-dev-server babel-{core, loader} babel-preset-react
+
+
+  * * * Install Webpack globally
+    npm install -g webpack --save
+
+    if(error)
+    npm remove webpack -g
+    npm i webpack --save-dev
+
+    * * * in package.json
+    "scripts": {
+    "webpack": "./node_modules/.bin/webpack",
+    "watch": "./node_modules/.bin/webpack -w"
+  },
+
+  * * * Updating dist bundle js by referencing index.html
+      npm install --save-dev html-webpack-plugin
+
+  * * * Babel.js for compiling JSX and ES2015 + ".babelrc" file instructs our babel-loader which babel transformations to actually make
+      npm install --save-dev babel-core babel-loader babel-preset-react
+
+
+  * * * About Webpack modules npm install in 'webpack.config.js'
+    - entry:[] (original src)
+    - module:{loaders:[]} (transformation)
+    - output: {filename:"", path: _dirname + '/dist'}
+
+    RUN "webpack -w" in CLI to watch project
